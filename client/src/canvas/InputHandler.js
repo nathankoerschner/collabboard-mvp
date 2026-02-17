@@ -193,12 +193,13 @@ export class InputHandler {
   }
 
   _onKeyDown(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
     if (e.key === ' ') {
       e.preventDefault();
       this.spaceHeld = true;
       this.canvasEl.style.cursor = 'grab';
     }
-    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
 
     if ((e.key === 'Delete' || e.key === 'Backspace') && this.selectedId) {
       this.callbacks.onDelete?.(this.selectedId);

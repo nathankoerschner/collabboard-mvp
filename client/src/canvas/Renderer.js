@@ -67,11 +67,16 @@ export class Renderer {
 
     // Text (skip if being edited to avoid doubling)
     if (text && !skipText) {
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(x, y, width, height);
+      ctx.clip();
       ctx.fillStyle = '#1a1a2e';
       ctx.font = '14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'top';
       this.wrapText(ctx, text, x + 10, y + 10, width - 20, 18);
+      ctx.restore();
     }
   }
 

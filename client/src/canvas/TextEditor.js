@@ -74,6 +74,7 @@ export class TextEditor {
     input.style.width = `${(obj.width - 20) * scale}px`;
     input.style.height = `${(obj.height - 20) * scale}px`;
     input.style.fontSize = `${14 * scale}px`;
+    input.style.lineHeight = `${18 * scale}px`;
     input.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
     input.style.border = 'none';
     input.style.outline = 'none';
@@ -82,6 +83,8 @@ export class TextEditor {
     input.style.overflow = 'hidden';
     input.style.padding = '0';
     input.style.margin = '0';
+    input.style.wordWrap = 'break-word';
+    input.style.whiteSpace = 'pre-wrap';
     input.style.zIndex = '10';
     input.style.color = '#1a1a2e';
   }
